@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3eee4">
+  <title>Contact — Nhlakanipho Luthuli</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Kalam:wght@300;400;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="index.html" aria-label="Back to home"><span class="brand-script">NL<span class="dot">.</span></span><span class="brand-caption">SOFTWARE DEVELOPER</span></a>
+    <div class="side-rule"></div>
+    <nav class="nav">
+      <a class="nav-link" href="index.html"><span class="nav-icon">⌂</span><span><b>Home</b><small>Start here</small></span></a>
+      <a class="nav-link" href="projects.html"><span class="nav-icon">‹ ›</span><span><b>Things I've built</b><small>Projects &amp; case studies</small></span></a>
+      <a class="nav-link" href="skills.html"><span class="nav-icon">♧</span><span><b>What I enjoy building with</b><small>Skills &amp; tools</small></span></a>
+      <a class="nav-link" href="about.html"><span class="nav-icon">♙</span><span><b>A little about me</b><small>My story &amp; values</small></span></a>
+      <a class="nav-link" href="certificates.html"><span class="nav-icon">✧</span><span><b>Certificates</b><small>Learning milestones</small></span></a>
+      <a class="nav-link active" href="contact.html"><span class="nav-icon">✉</span><span><b>Say hello</b><small>Get in touch</small></span></a>
+    </nav>
+    <div class="availability"><span class="green-dot"></span><span>Available for new<br>opportunities</span></div>
+    <div class="sidebar-bottom">
+      <p>Let's build something<br>impactful.</p>
+      <a href="mailto:hello@example.com" class="email-link">hello@example.com ↗</a>
+      <div class="socials"><a href="#" aria-label="GitHub">GH ↗</a><a href="#" aria-label="LinkedIn">in ↗</a><a href="assets/cv.pdf" aria-label="Resume">CV ↓</a></div>
+    </div>
+    <button class="mobile-close" id="closeMenu" aria-label="Close menu">×</button>
+  </aside>
+
+  <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰ <span>MENU</span></button>
+  <main class="main-content">
+    <section class="section contact-section" id="contact">
+      <div class="section-heading"><div><p class="eyebrow">LET'S TALK</p><h2>Say hello<span class="orange-dot">.</span></h2></div><p class="heading-note">Got an idea, a role or<br>just a question? ✉</p></div>
+      <div class="contact-layout">
+        <form class="contact-form paper-note" id="contactForm">
+          <label>Your name<input type="text" name="name" required autocomplete="name"></label>
+          <label>Your email<input type="email" name="email" required autocomplete="email"></label>
+          <label>Subject<input type="text" name="subject" placeholder="What's this about?"></label>
+          <label>Message<textarea name="message" rows="6" required></textarea></label>
+          <button class="button button-dark" type="submit">Send message <span>↗</span></button>
+          <p class="form-status" id="formStatus" role="status"></p>
+        </form>
+        <aside class="contact-details">
+          <h3>Or reach me directly</h3>
+          <ul>
+            <li><small>EMAIL</small><a href="mailto:Nhlakanipholuthuli2108@gmail.com">Nhlakanipholuthuli2108@gmail.com</a></li>
+            <li><small>GITHUB</small><a href="https://github.com/Nhlakanipho2108">https://github.com/Nhlakanipho2108</a></li>
+            <li><small>LINKEDIN</small><a href="https://www.linkedin.com/in/nhlakanipho-luthuli-2108/">linkedin.com/in/nhlakanipho-luthuli-2108</a></li>
+            <li><small>BASED IN</small><span>South Africa · open to remote</span></li>
+          </ul>
+          <p class="contact-note">Usually reply within a day or two ☕</p>
+        </aside>
+      </div>
+      <div class="page-number">06 / SAY HELLO</div>
+    </section>
+    <footer class="footer"><span>© <span class="year"></span> <span data-edit="name">Nhlakanipho Luthuli</span></span><span>Built with ☕ and lots of curiosity.</span><a href="#contact">Back to top ↑</a></footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
