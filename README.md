@@ -1,14 +1,14 @@
 # Scrapbook Developer Portfolio
 
-A responsive portfolio starter inspired by the notebook / scrapbook style in the reference screenshots, including a bookish left sidebar with spiral binding. It uses plain HTML, CSS and JavaScript — no build tools or frameworks required.
+A responsive portfolio inspired by a notebook / scrapbook, including a bookish sidebar with spiral binding. It uses plain HTML, CSS and JavaScript — no build tools or frameworks required. Layouts adapt across desktop, tablet and mobile, with a scrollable mobile navigation and touch-friendly project and certificate interactions.
 
 ## Run it
 Open `index.html` in your browser. For best results, use VS Code with the Live Server extension.
 
 ## Personalise it first
-1. In `index.html`, replace **Your Name**, the email address, social links, project names/descriptions, skills and certificate details.
-2. Replace `href="#"` project links with your real URLs.
-3. Put your CV at `assets/cv.pdf` (create the `assets` folder), or change the Download CV link.
+1. Update the name, email address, social links, project names/descriptions, skills and certificate details in the HTML pages and `script.js`.
+2. Update project links in `projects.html` when your project URLs change.
+3. The Download CV link currently uses `Nhlakanipho Luthuli Cv (3).pdf` in the project root; update the link if you move or rename the file.
 4. Replace the portrait (`linked2.jpg`) in `about.html` with your own photo if you like.
 5. Replace sample certificate cards with your actual qualifications and credential verification links.
 6. In `contact.html` / `script.js`, set your real email (`CONTACT_EMAIL`) and social links.

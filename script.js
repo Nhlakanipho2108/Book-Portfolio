@@ -1,7 +1,22 @@
 // Shared interactions: mobile menu, project details, certificate flips, contact form.
 const sidebar = document.querySelector('#sidebar');
-document.querySelector('#menuToggle').addEventListener('click', () => sidebar.classList.add('open'));
-document.querySelector('#closeMenu').addEventListener('click', () => sidebar.classList.remove('open'));
+const menuToggle = document.querySelector('#menuToggle');
+const closeMenu = () => {
+  sidebar.classList.remove('open');
+  menuToggle.setAttribute('aria-expanded', 'false');
+};
+menuToggle.addEventListener('click', () => {
+  sidebar.classList.add('open');
+  menuToggle.setAttribute('aria-expanded', 'true');
+});
+document.querySelector('#closeMenu').addEventListener('click', closeMenu);
+sidebar.querySelectorAll('.nav-link').forEach(link => link.addEventListener('click', closeMenu));
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && sidebar.classList.contains('open')) {
+    closeMenu();
+    menuToggle.focus();
+  }
+});
 
 // Project cards reveal their case-study details on hover, click, Enter or Space.
 document.querySelectorAll('.project-card').forEach(card => {
@@ -27,18 +42,33 @@ document.querySelectorAll('.certificate-card').forEach(card => card.addEventList
   card.setAttribute('aria-pressed', String(flipped));
 }));
 
-// Contact form opens the visitor's email app with the message pre-filled (no backend needed).
-// Replace this with a form service (Formspree, Netlify Forms…) if you want direct delivery.
-const CONTACT_EMAIL = 'hello@example.com';
+// Contact form is delivered through Formspree.
+const FORMSPREE_URL = 'https://formspree.io/f/xdeajdkz';
+const CONTACT_EMAIL = 'Nhlakanipholuthuli2108@gmail.com';
 const contactForm = document.querySelector('#contactForm');
 if (contactForm) {
-  contactForm.addEventListener('submit', event => {
+  const status = document.querySelector('#formStatus');
+  const submitButton = contactForm.querySelector('button[type="submit"]');
+  contactForm.addEventListener('submit', async event => {
     event.preventDefault();
-    const data = new FormData(contactForm);
-    const subject = data.get('subject') || `Portfolio message from ${data.get('name')}`;
-    const body = `${data.get('message')}\n\n— ${data.get('name')} (${data.get('email')})`;
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    document.querySelector('#formStatus').textContent = 'Opening your email app… thank you!';
+    submitButton.disabled = true;
+    status.style.color = '';
+    status.textContent = 'Sending…';
+    try {
+      const response = await fetch(FORMSPREE_URL, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: { Accept: 'application/json' }
+      });
+      if (!response.ok) throw new Error('Request failed');
+      contactForm.reset();
+      status.textContent = 'Message sent — thank you! I\'ll reply soon.';
+    } catch (error) {
+      status.style.color = '#c0392b';
+      status.textContent = `Couldn't send your message. Please email me at ${CONTACT_EMAIL}.`;
+    } finally {
+      submitButton.disabled = false;
+    }
   });
 }
 
