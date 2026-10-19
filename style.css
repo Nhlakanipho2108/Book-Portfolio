@@ -91,3 +91,4 @@ body{position:relative;min-height:100vh}
 
 .project-preview{height:auto;aspect-ratio:auto;background:var(--paper2)}
 .project-preview img{height:auto;object-fit:contain}
+.form-status-error{color:#c0392b}

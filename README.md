@@ -1,27 +1,37 @@
 # Scrapbook Developer Portfolio
 
-A responsive portfolio inspired by a notebook / scrapbook, including a bookish sidebar with spiral binding. It uses plain HTML, CSS and JavaScript — no build tools or frameworks required. Layouts adapt across desktop, tablet and mobile, with a scrollable mobile navigation and touch-friendly project and certificate interactions.
+A responsive scrapbook-style developer portfolio built with Vue 3 and Vue Router. The design, copy, and page URLs are preserved while shared navigation and page interactions are now Vue components.
 
 ## Run it
-Open `index.html` in your browser. For best results, use VS Code with the Live Server extension.
 
-## Personalise it first
-1. Update the name, email address, social links, project names/descriptions, skills and certificate details in the HTML pages and `script.js`.
-2. Update project links in `projects.html` when your project URLs change.
-3. The Download CV link currently uses `Nhlakanipho Luthuli Cv (3).pdf` in the project root; update the link if you move or rename the file.
-4. Replace the portrait (`linked2.jpg`) in `about.html` with your own photo if you like.
-5. Replace sample certificate cards with your actual qualifications and credential verification links.
-6. In `contact.html` / `script.js`, set your real email (`CONTACT_EMAIL`) and social links.
-7. In `style.css`, edit the colour variables at the top (`--paper`, `--ink`, `--orange`, etc.) to re-theme the site.
+Install dependencies and start the Vite development server:
 
-## Pages
-`index.html` (home) · `projects.html` · `skills.html` · `about.html` · `certificates.html` · `contact.html`. All share `style.css` and `script.js`; the sidebar is repeated in each page, so update the nav in every file when adding a page (and mark that page's link `active`).
+```sh
+npm install
+npm run dev
+```
 
-## Interactions included
-- Responsive slide-in navigation on mobile
-- Active navigation state while scrolling
-- Project cards expand on click / keyboard
-- Certificate cards flip on click / tap
+Create and preview a production build with `npm run build` and `npm run preview`.
+
+## Pages and source
+
+The existing HTML page URLs remain available as Vite entry points: `index.html`, `projects.html`, `skills.html`, `about.html`, `certificates.html`, and `contact.html`. Page content lives in `src/pages/`; shared navigation and footer live in `src/components/`. `style.css` contains the site-wide scrapbook design.
+
+## Personalise it
+
+- Update page copy and project details in the relevant Vue page under `src/pages/`.
+- Change shared navigation, email, or social links in `src/components/Sidebar.vue`.
+- Replace public files in `public/` to update the portrait, project previews, certificates, or CV.
+- Set the contact email and Formspree endpoint in `src/pages/ContactPage.vue`.
+- Edit the theme variables at the start of `style.css` to change the colors.
+
+## Interactions
+
+- Responsive slide-in navigation with keyboard Escape support
+- Project cards expand on click and keyboard activation
+- Certificate cards flip on click or tap
+- Contact form submits to Formspree
+- Scroll, touch, and keyboard page-turn navigation
 - Reduced-motion accessibility support
 
 Google Fonts are loaded from the web; the site falls back to system fonts if offline.
