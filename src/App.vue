@@ -2,6 +2,7 @@
 import { nextTick, onBeforeUnmount, onMounted, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import Sidebar from './components/Sidebar.vue';
+import ArcadeCorner from './components/ArcadeCorner.vue';
 import PageFooter from './components/PageFooter.vue';
 import { usePageTurn } from './usePageTurn.js';
 
@@ -29,6 +30,7 @@ onBeforeUnmount(stop);
   <Sidebar />
   <main class="main-content">
     <RouterView />
+    <ArcadeCorner />
     <PageFooter />
   </main>
 </template>
