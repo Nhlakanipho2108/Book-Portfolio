@@ -2,8 +2,6 @@
 import { nextTick, onBeforeUnmount, ref, watch } from 'vue';
 
 import TicTacToe from './TicTacToe.vue';
-import MemoryMatch from './MemoryMatch.vue';
-import BugSquash from './BugSquash.vue';
 
 const open = ref(false);
 const tab = ref('connect');
@@ -248,14 +246,9 @@ watch([open, tab], async () => {
         <button type="button" role="tab" :class="{ on: tab === 'connect' }" @click="tab = 'connect'">Connect Four</button>
         <button type="button" role="tab" :class="{ on: tab === 'snake' }" @click="tab = 'snake'">Code Snake</button>
         <button type="button" role="tab" :class="{ on: tab === 'ttt' }" @click="tab = 'ttt'">Tic-Tac-Toe</button>
-        <button type="button" role="tab" :class="{ on: tab === 'memory' }" @click="tab = 'memory'">Memory</button>
-        <button type="button" role="tab" :class="{ on: tab === 'bugs' }" @click="tab = 'bugs'">Bug Squash</button>
       </div>
 
       <TicTacToe v-if="open && tab === 'ttt'" />
-      <MemoryMatch v-if="open && tab === 'memory'" />
-      <BugSquash v-if="open && tab === 'bugs'" />
-
       <div v-show="tab === 'connect'" class="arcade-game">
         <p class="arcade-msg">{{ c4Msg }}</p>
         <div class="c4-board">

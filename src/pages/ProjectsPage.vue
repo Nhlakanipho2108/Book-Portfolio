@@ -59,7 +59,7 @@ function toggleProject(index) {
         <div class="project-preview"><img :src="asset(item.image)" :alt="item.alt"></div>
         <h3>{{ item.title }}</h3><p class="project-summary">{{ item.summary }}</p>
         <div class="tags"><span v-for="tag in item.tags" :key="tag">{{ tag }}</span></div>
-        <div class="card-reveal"><strong>THE CHALLENGE</strong><p>{{ item.challenge }}</p><strong>THE PROJECT</strong><p>{{ item.project }}</p><a :href="item.link" class="project-link" @click.stop>View project ↗</a></div>
+        <div class="card-reveal"><strong>THE CHALLENGE</strong><p>{{ item.challenge }}</p><strong>THE PROJECT</strong><p>{{ item.project }}</p><a :href="item.link" class="project-link" target="_blank" rel="noopener noreferrer" @click.stop>View project ↗</a></div>
         <span class="click-hint">Hover or click to unfold ↗</span>
       </article>
     </div>
